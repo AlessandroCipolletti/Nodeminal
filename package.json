@@ -1,0 +1,44 @@
+{
+  "name": "nodeminal",
+  "version": "1.0.0",
+  "description": "Runs a node terminal and a node app inside your browser, locally.",
+  "source": "src/index.html",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "scripts": {
+    "lint": "eslint ./src --ext .ts",
+    "lint:quiet": "eslint ./src --ext .ts --quiet",
+    "lint:fix": "eslint ./src --ext .ts --fix",
+    "start": "parcel src/index.html --dist-dir ./build",
+    "build": "rm -rf ./build && parcel build --no-source-maps --dist-dir ./build && cp ./.htaccess ./build/.htaccess"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlessandroCipolletti/Nodeminal.git"
+  },
+  "keywords": [
+    "node",
+    "terminal",
+    "webcontainer",
+    "javascript"
+  ],
+  "author": "Alessandro Cipolletti <cipolletti.alessandro@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AlessandroCipolletti/Nodeminal/issues"
+  },
+  "homepage": "https://github.com/AlessandroCipolletti/Nodeminal#readme",
+  "dependencies": {
+    "@webcontainer/api": "^1.0.2",
+    "debounce": "^1.2.1",
+    "xterm": "^5.1.0",
+    "xterm-addon-fit": "^0.7.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.33.0",
+    "eslint-config-wesbos": "^3.2.3",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.6.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "parcel": "^2.8.3"
+  }
+}

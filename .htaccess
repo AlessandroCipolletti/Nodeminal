@@ -1,0 +1,9 @@
+Header set Cross-Origin-Embedder-Policy "require-corp"
+Header set Cross-Origin-Opener-Policy "same-origin"
+Header set Access-Control-Allow-Origin "*"
+Header set Access-Control-Allow-Methods "GET, HEAD, PUT, PATCH, POST, DELETE"
+Header set Access-Control-Allow-Headers "Origin, X-Requested-With, Content-Type, Accept, Content-Type"
+
+RewriteEngine On 
+RewriteCond %{HTTPS} off 
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
