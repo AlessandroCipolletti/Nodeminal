@@ -34,7 +34,7 @@ Run `npm run start` inside the left terminal to start you app, and every time yo
 
 Your app will be live at the url shown in the left terminal.
 
-And that's it,
+And that's it.
 
 I find it useful for testing snippets while I'm coding, so why not share it :)
 
