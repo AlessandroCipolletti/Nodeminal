@@ -30,7 +30,7 @@ On the left terminal you can install any node package you need inside your node 
 <br>
 On the right you can edit your code. You can import stuff from whatever package you installed, connect to an external db, and expose some api routes.
 
-Run `npm run start` inside the left terminal to start you app, and every time you save your code, the app restarts automatically.
+Run `npm run start` inside the left terminal to start you app, and every time you save your code the app restarts automatically.
 
 Your app will be live at the url shown in the left terminal.
 
