@@ -5,9 +5,6 @@ import debounce from 'debounce'
 import { files } from './files'
 import 'xterm/css/xterm.css'
 
-// The tutorial I used:
-// https://webcontainers.io/tutorial/1-build-your-first-webcontainer-app
-
 const init = async() => {
   // init the node web container
   const webcontainer = await WebContainer.boot()
@@ -54,11 +51,23 @@ const init = async() => {
   const editor = document.querySelector('textarea')
   editor.value = files['index.js'].file.contents
 
-  // handle file save
   document.body.addEventListener('keydown', (e) => {
+    // handle file save
     if (e.key === 's' && (e.ctrlKey || e.metaKey)) {
       e.preventDefault()
       webcontainer.fs.writeFile('/index.js', editor.value)
+      return
+    } 
+    // handle tab
+    if (e.key === 'Tab') {
+      e.preventDefault()
+      const tabLength = 2
+      const tab = Array(tabLength).fill().map(() => ' ').join('')
+      const start = editor.selectionStart
+      const end = editor.selectionEnd
+      editor.value = `${editor.value.substring(0, start)}${tab}${editor.value.substring(end)}`
+      editor.selectionStart = start + tabLength
+      editor.selectionEnd = start + tabLength
     }
   })
 }

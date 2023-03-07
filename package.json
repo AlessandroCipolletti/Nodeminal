@@ -1,6 +1,6 @@
 {
   "name": "nodeminal",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Runs a node terminal and a node app inside your browser, locally.",
   "source": "src/index.html",
   "browserslist": "> 0.5%, last 2 versions, not dead",
